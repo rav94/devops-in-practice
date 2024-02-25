@@ -1,5 +1,5 @@
 'use strict';
-const config = require('../config');
+const config = require('../config.js');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const should = chai.should();
