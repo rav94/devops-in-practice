@@ -1,15 +1,15 @@
 'use strict';
-import { port } from '../config';
-import { should as _should, use, request } from 'chai';
-import chaiHttp from 'chai-http';
-const should = _should();
-import server from '../app';
+const config = require('../config.js');
+const chai = require('chai');
+const chaiHttp = require('chai-http');
+const should = chai.should();
+const server = require('../app');
 
-use(chaiHttp);
+chai.use(chaiHttp);
 
 describe('/GET', () => {
     it('returns the homepage', (done) => {
-        request(`http://localhost:${port}`)
+        chai.request(`http://localhost:${config.port}`)
             .get('/')
             .end((err, res) => {
                 res.should.have.status(200);
