@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: ravnf94/nodejs-demo
+  repository: 830791455757.dkr.ecr.us-east-1.amazonaws.com/ravnf94
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
@@ -39,16 +39,16 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
-service:
-  type: NodePort
-  port: 3000
-
 # service:
-#   type: LoadBalancer
-#   port: 80
-#   targetPort: 3000
-#   protocol: TCP
-#   name: node-app
+#   type: NodePort
+#   port: 3000
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 3000
+  protocol: TCP
+  name: node-app
 
 ingress:
   enabled: false
