@@ -1,0 +1,20 @@
+-LOCAL_DEMO-
+helm ls
+helm repo list
+helm repo add helm101 https://ibm.github.io/helm101/
+helm repo list
+helm search helm101
+helm install helm101/guestbook --name myguestbook --set service.type=NodePort 
+helm ls
+helm history myguestbook
+helm upgrade myguestbook helm101/guestbook
+helm rollback myguestbook 1
+helm repo remove helm101
+helm delete --purge myguestbook
+
+-GENERAL-
+helm create <chart>
+helm install <release-name> <chart>
+helm list
+helm history <release-name>
+helm rollback <release-name> [revision]
