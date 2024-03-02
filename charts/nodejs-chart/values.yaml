@@ -51,10 +51,9 @@ securityContext: {}
 
 service:
   type: LoadBalancer
-  port: 80
-  targetPort: 3000
+  port: 3000
+  targetPort: 80
   protocol: TCP
-  name: node-app
 
 ingress:
   enabled: false
