@@ -51,7 +51,7 @@ securityContext: {}
 
 service:
   type: LoadBalancer
-  port: 80 # port which listens to external traffic
+  port: 8080 # port which listens to external traffic
   targetPort: 3000 # actual port within container
   containerPort: 3000 # actual port within container - simillar to above. Added for clear view
   protocol: TCP
