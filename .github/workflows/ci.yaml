@@ -1,8 +1,6 @@
 name: CI
 
 on:
-    push:
-      branches: ["main"]
     pull_request:
       branches: ["main"]
       types: [opened, synchronize, reopened]
@@ -11,6 +9,9 @@ jobs:
   test:
     name: 'Node.js Tests'
     runs-on: ubuntu-latest
+    defaults:
+      run:
+       working-directory: ./app
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
