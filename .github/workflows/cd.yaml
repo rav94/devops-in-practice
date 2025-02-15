@@ -40,7 +40,7 @@ jobs:
 
     - name: Update kube config
       env:
-        CLUSTER_NAME: education-eks-yaXUEf6N
+        CLUSTER_NAME: education-eks-Zeiz1O5B
       run: |
         aws eks update-kubeconfig --name $CLUSTER_NAME
 
